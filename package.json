@@ -1,0 +1,19 @@
+{
+  "name": "supermercado_backend",
+  "version": "1.0.0",
+  "description": "Este es el backend para nuestra página web",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoJimenez123/supermercado_backend.git"
+  },
+  "author": "Nicolas Jimenez, Cristian Mazza, Leonardo de la Fuente",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicoJimenez123/supermercado_backend/issues"
+  },
+  "homepage": "https://github.com/NicoJimenez123/supermercado_backend#readme"
+}
