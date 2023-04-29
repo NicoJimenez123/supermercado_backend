@@ -1,15 +1,17 @@
 const express = require('express');
 const app = express();
+app.use(express.json());
 
-app.use(express.json())
+const productoRuta = require('../routes/ProductosRouter')
 
-const Producto = [
-  {"id": 1, "nombre":"pan integral", "prese": "500g", "precio": "280", "stock":false},
-  {"id": 2, "nombre":"harina 000",   "prese": "1kg",  "precio": "120", "stock":true},
-]
+app.use('/tienda/productos', productoRuta);
 
 
+module.exports = app;
 
+
+///
+/*
 app.get('/tienda/productos', (req, res) => {
   res.status(200).json( Producto )
 } )
@@ -53,4 +55,5 @@ app.put('/tienda/productos/:idProducto/estadoStock', (req, res) => {
   else
       res.status(404).json( {"Mensaje": `El product ${idProducto} no fue encontrado`} )
 })
-  module.exports = app;
+
+*/
