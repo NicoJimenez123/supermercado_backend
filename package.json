@@ -2,11 +2,11 @@
   "name": "supermercado_backend",
   "version": "1.0.0",
   "description": "Este es el backend para nuestra página web",
-  "main": "src/server.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server/server.js",
-    "start": "node server/server.js"
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
