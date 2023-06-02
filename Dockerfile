@@ -1,6 +1,6 @@
-FROM node:lts-buster
+FROM node:19-alpine
 
-WORKDIR /app
+WORKDIR /home/node/
 
 COPY package*.json ./
 
