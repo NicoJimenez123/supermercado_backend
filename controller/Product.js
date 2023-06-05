@@ -36,6 +36,48 @@ const Producto = require('../models/Productos');
         });
       });
   };
+
+  exports.borrarProducto = (req, res, next) => {
+    Producto.deleteOne({_id: req.params.id}).then(
+      () => {
+        res.status(200).json({
+          message: 'Borrada!'
+        });
+      }
+    ).catch(
+      (error) => {
+        res.status(400).json({
+          error: error
+        });
+      }
+    );
+  };
+
+  exports.cambiarStock = (req, res, next) => {
+    const { nombre, prese, precio, stock } = req.body;
+
+    const productos = {
+      nombre,
+      prese,
+      precio,
+      stock
+    };
+    Producto.updateOne({_id: req.params.id}, productos).then(
+      () => {
+        res.status(201).json({
+          message: 'Stock Actualizado'
+        });
+      }
+    ).catch(
+      (error) => {
+        res.status(400).json({
+          error: error
+        });
+      }
+    );
+  };
+
+
       
 /*
 

@@ -7,7 +7,7 @@ const produController = require('../controller/Product')
 
 router.get('/', produController.obtenerProductos);
 router.post('/', produController.agregarProducto);
-//router.delete('/:idProducto', produController.borrarProducto);
-//router.put(':idProducto/estadoStock', produController.cambiarStock);
+router.delete('/:id', produController.borrarProducto);
+router.put('/:id', produController.cambiarStock);
 
 module.exports = router;
