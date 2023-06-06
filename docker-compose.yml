@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.8'
 
 services:
   mongodb:
@@ -11,7 +11,7 @@ services:
     ports:
       - 3000:3000
     environment:
-      MONGO_URL: mongo
+      MONGO_URL: mongo:27017
     depends_on:
       - mongodb
 
