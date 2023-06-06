@@ -5,13 +5,17 @@ services:
     image: mongo
     ports:
       - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: nico
+      MONGO_INITDB_ROOT_PASSWORD: 123
+      MONGO_INITDB_DATABASE: supermercadoDB
+    volumes:
+      - ./dbdata:/data/db
 
   backend:
     image: 'super_back'
     ports:
       - 3000:3000
-    environment:
-      MONGO_URL: mongo:27017
     depends_on:
       - mongodb
 
