@@ -1,12 +1,21 @@
 version: '3.1'
 
 services:
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+
   backend:
     image: 'super_back'
     ports:
-    - "3000:3000"
-  
+      - 3000:3000
+    environment:
+      MONGO_URL: mongo
+    depends_on:
+      - mongodb
+
   frontend:
     image: 'super_front'
     ports:
-    - "4000:4000"
+      - 4000:4000
