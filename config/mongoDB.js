@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
-const URI = 'mongodb://localhost:27017/supermercadoDB';
+const MongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/supermercadoDB'
+// const URI = `mongodb://localhost:27017/supermercadoDB`;
 
-mongoose.connect(URI, {
+mongoose.connect(MongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 
 }).then( ()=>{
     console.log('se conecto')
 
-}).catch( ()=>{
-    console.log('no se conecto: ERROR')
+}).catch( (e)=>{
+    console.log('no se conecto: ERROR', e)
 
 })
 
-module.exports = (mongoose);
+module.exports = mongoose;
