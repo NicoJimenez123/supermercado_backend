@@ -25,3 +25,5 @@ docker exec -it {container_id} /bin/bash
 ```
 docker ps
 ```
+# Para utilizar mongo:
+Hay que crear un archivo .env dentro del directorio raiz del proyecto con la variable MONGO_URL y el string de conexión a la Base de datos
